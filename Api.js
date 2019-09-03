@@ -26,6 +26,6 @@ server.use(routesUsers)
 
 
 
-server.listen(process.event.PORT || 3333)
+server.listen(process.env.PORT || 3333)
 /* server.listen(3333) */
 module.exports= server
