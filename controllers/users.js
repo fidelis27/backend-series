@@ -28,10 +28,11 @@ module.exports = {
         
     }, 
     async updateUsers(req, res) {
-        
+        const { name , email } =  req.body
         const user = await Users.findByIdAndUpdate(
             req.params.id,  {          
-            name: req.body.name            
+            name,
+            email         
         })
          return res.json(user) 
          console.log(user)      
