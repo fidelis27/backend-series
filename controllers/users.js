@@ -35,7 +35,7 @@ module.exports = {
             email         
         })
          return res.json(user) 
-         console.log(user)      
+          
     },   
     async removeUsers(req,res){
         const user = await Users.findByIdAndRemove(req.params.id)

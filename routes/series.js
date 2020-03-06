@@ -3,12 +3,6 @@ const router = express.Router()
 const seriesControllers = require('../controllers/series')
 
 
- /* router.post('/serie', (req, res)=>{
-     const produto = req.body
-     console.log(produto)
-     res.json(produto)
-
- }) */
  router.post('/serie/', seriesControllers.storeSeries)    
  router.get('/serie/edit/:id', seriesControllers.showSeries)
  router.get('/serie/:genre', seriesControllers.showSeriesByGenre)

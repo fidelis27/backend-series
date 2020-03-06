@@ -4,6 +4,7 @@ const routesGenres = require('./routes/genres')
 const routesUsers = require('./routes/users')
 const server = express ()
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 // bodyParser utilizado quando irá remeter formulario via url
 server.use(bodyParser.urlencoded({extended:true}))
@@ -12,13 +13,7 @@ server.use(express.json())
 //express.text utilizado para enviar dados text
 server.use(express.text())
 
-server.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-    next()
-  })
+server.use(cors())
 server.use(routesGenres)
 server.use(routesSeries)
 server.use(routesUsers)
